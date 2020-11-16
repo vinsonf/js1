@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button onclick="isPaused = false">This is a button</button>
+    <script>
+        console.log('internal');
+    </script>
+    <style>
+        input {
+            padding: 10px;
+        }
+
+        #super-clock {
+            margin: 0 auto;
+            font-size: 40px;
+            width: 100px;;
+        }
+
+        #super-clock > div {
+            display: flex;
+            gap: 8px;
+           
+        }
+    </style>
+
+    <div id="game-view"></div>
+
+    <div id="super-clock">
+        <div>
+            <div id=month>Jan</div>
+            <div id=day>01,</div>
+            <div id=year>1999</div>
+        </div>
+  
+        <div>
+            <div id=hour>9</div>:
+            <div id=minute>12</div>:
+            <div id=second>42</div>
+        </div>
+      
+        <div>
+            <div id='day-of-week'></div>
+        </div>
+    </div>
+
+    <!-- <script src="js/script.js"></script>   -->
+    <script>
+     let date = new Date(prompt('date?'));
+        if (!confirm('Are you sure')) {
+            date = new Date();
+        }
+
+
+        function showTime() {
+       
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      
+            document.querySelector('#month').innerHTML = months[  date.getMonth() ];
+            document.querySelector('#day').innerHTML = date.getDate() + ',';
+            document.querySelector('#year').innerHTML = date.getFullYear();
+
+            document.querySelector('#hour').innerHTML = date.getHours() > 12 ?  String(date.getHours() - 12).padStart(2, '0') : String(date.getHours()).padStart(2, '0');
+            document.querySelector('#minute').innerHTML = String(date.getMinutes()).padStart(2, '0');
+            document.querySelector('#second').innerHTML = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+
+            if (date.getHours()  > 19 ) {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+            }
+        }
+
+        setInterval(showTime, 1000);
+
+
+    //     function myFunction( cb ) {
+    //         const random = Math.random();
+    //         cb(random);
+    //     }
+
+    //    myFunction(console.log);
+
+
+    
+    </script> 
+</body>
+</html>
