@@ -1,25 +1,15 @@
-var pets = ['dog'];
+/*
+Write a function that accepts a number as an argument
+Alert the user whether the given number is even or odd
+Call your function
+*/
 
-function petPets() {
-    this.pets.forEach( function (pet) {
-        console.log('i pet my', pet);
-    });
+
+function evenOrOdd(value) {
+    if (!value) {
+        return console.log('enter a real number!');
+    }
+    return value % 2 ? 'odd' : 'even';
 }
-
-petPets();
-
-
-const user1 = {
-    pets: ['cat', 'spider'],
-    petPets: petPets,
-};
-const user2 = {
-    pets: ['dog', 'fish'],
-    petPets: petPets,
-};
-function localFunction() {
-    const name = 'local';
-}
-
-localFunction();
-console.log(user2.petPets());
+const answer = parseInt(prompt('what number'));
+document.body.innerHTML = evenOrOdd(answer);
