@@ -83,8 +83,8 @@ const LessThan6 = objects.filter( item => {
 
 greaterThan5.forEach( item => {
     const show = `
-        <div>Date: ${item['JDay']}/ ${item.Year}</div>
-        <div>Lwn2B1: ${item['Lwn2B1']}</div>
+        <div>Date: ${ item['JDay'] } / ${ item.Year }</div>
+        <div>Lwn2B1: ${ item['Lwn2B1'] }</div>
         <hr>
     `;
     uls[0].innerHTML += show;
