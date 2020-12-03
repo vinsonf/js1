@@ -19,7 +19,4 @@ fileData.split('').forEach( c => {
     }
 });
 
-console.log(newDataArray.join('|'));
-
-
 fs.writeFileSync('./somethingConvert.csv', fileData);

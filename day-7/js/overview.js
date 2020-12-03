@@ -138,28 +138,6 @@ function convertCentsToDollars(pennies) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-console.log(storeData);
-
-
-
-
-
-
-
 function createItem(price, title, description, onSale) {
     return {
         price: price,
