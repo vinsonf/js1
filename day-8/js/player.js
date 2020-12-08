@@ -72,4 +72,70 @@ class Player {
        this.render();
     }
 
+    checkCollision(enemy) {
+        let overlapX = false;
+        let overlapY = false;
+        if (this.y  + 80 > enemy.y && this.y  < enemy.y + 80) {
+            console.log('overlapping y')
+            overlapY = true;
+        }
+        if (this.x  + 80 > enemy.x && this.x  < enemy.x + 80) {
+            console.log('overlapping x');
+            overlapX = true;
+        }
+
+        if (overlapX && overlapY) {
+            console.log('hit');
+            this.health -= 10;
+            if (this.health < 1) {
+                alert('Dead');
+            }
+        }
+
+    }
+
+}
+
+class Enemy extends Player {
+    directions = ['up', 'down', 'left', 'right'];
+    direction = 'right';
+    constructor(x, y, bgColor, left, right, up, down) {
+        super(x, y, bgColor, left, right, up, down);
+    }
+    move(key) {
+        if (Math.random() > .9) {
+            const index = Math.floor(Math.random() * this.directions.length);
+            this.direction = this.directions[index];
+        }
+
+        if (this.direction === 'right') {
+            this.x += 20
+        }
+        if (this.direction === 'up') {
+            this.y -= 20
+        }
+        if (this.direction === 'left') {
+            this.x -= 20
+        }
+        if (this.direction === 'down') {
+            this.y += 20
+        }
+
+        if (this.x + 80 > window.innerWidth)  {
+            this.direction = 'left';
+        }
+
+        if (this.x  < 0)  {
+            this.direction = 'right';
+        }
+
+        if (this.y + 80 > window.innerHeight)  {
+            this.direction = 'up';
+        }
+
+        if (this.y  < 0)  {
+            this.direction = 'down';
+        }
+        this.render();
+    }
 }

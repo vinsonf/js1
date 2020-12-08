@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge</title>
+</head>
+<body>
+
+<script>
+    const dogObject = {};
+    dogObject.name = 'rover';
+    dogObject.color = 'chocolate';
+    dogObject.speak = function () {
+        alert('Woof!');
+    }
+    dogObject.sit = function () {
+        alert(this.name  + ' sits.');
+    }
+    console.log(dogObject);
+    dogObject.show = function () {
+        const ul = document.createElement('ul');
+        document.body.appendChild(ul);
+        const name = document.createElement('li');
+        name.innerHTML = 'Name: ' + this.name;
+        ul.appendChild(name);
+        const speak = document.createElement('li');
+        ul.appendChild(speak);
+        speak.addEventListener('click', () => {
+            this.speak();
+        })
+    }
+
+
+    class Dog {
+        name = 'rover';
+        color = 'chocolate';
+        speak() {
+            alert(this.name + ' says Woof!');
+        }
+        sit() {
+            alert(this.name + ' sits.');
+        }
+        show() {
+            const ul = document.createElement('ul');
+            document.body.appendChild(ul);
+            const name = document.createElement('li');
+            name.innerHTML = 'Name: ' + this.name;
+            ul.appendChild(name);
+            const speak = document.createElement('li');
+            ul.appendChild(speak);
+            speak.addEventListener('click', () => {
+                this.speak();
+            })
+        }
+    }
+
+    const dog2 = new Dog();
+
+    class LittleDog extends Dog {
+        digUnderFence() {
+            alert(this.name + ' got loose under the fence.')
+        }
+        speak() {
+            alert(this.name + ' arf.')
+        }
+    }
+
+    class BigDog extends Dog {
+        jumpsFence() {
+            alert(this.name + ' got loose by jumping the fence.')
+        }
+        speak() {
+            alert(this.name + 'say WOOF!')
+        }
+    }
+
+    const littleDog = new LittleDog();
+    const bigDog = new BigDog()
+
+
+</script>
+
+</body>
+</html>
