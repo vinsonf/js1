@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online</title>
+</head>
+<body>
+
+<form onsubmit="onSubmit(event)">
+    <input type="text">
+    <input type="submit">
+</form>
+
+<button onclick="getUsers()">GET USERS</button>
+
+<ul>
+
+</ul>
+
+<script>
+    const host = 'http://587afcf367d9.ngrok.io/';
+    function onSubmit(event) {
+        event.preventDefault();
+        console.log('you pushed submit');
+        const username = document.querySelector('input').value;
+        console.log('username', username);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', host + 'users');
+        xhr.onload = function () {
+            console.log(xhr.responseText);
+        }
+        xhr.setRequestHeader("Content-Type", "application/json");
+        const value = JSON.stringify({username: username});
+        console.log(value);
+        xhr.send(value);
+    }
+
+    function getUsers() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', host + 'users' );
+        xhr.onload = function () {
+            const data = JSON.parse(xhr.responseText);
+            document.querySelector('ul').innerHTML = '';
+            data.users.forEach( user => {
+                const li = document.createElement('li');
+                document.querySelector('ul').appendChild(li);
+                li.innerHTML = user;
+            })
+        }
+        xhr.send();
+
+    }
+
+
+</script>
+
+</body>
+</html>

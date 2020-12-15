@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1f437ba9-1e04-46cb-b791-e88531a3e387" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day-8/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/day-8/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day-8/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/day-8/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day-8/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/day-8/js/player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day-9/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/day-9/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day-9/js/overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/day-9/js/overview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +16,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
+        <option value="package.json" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -64,7 +65,9 @@
       <workItem from="1606787325771" duration="10567000" />
       <workItem from="1606876390489" duration="277000" />
       <workItem from="1606960610511" duration="8731000" />
-      <workItem from="1607392793334" duration="2829000" />
+      <workItem from="1607392793334" duration="9031000" />
+      <workItem from="1607565542085" duration="8124000" />
+      <workItem from="1607997130384" duration="10383000" />
     </task>
     <servers />
   </component>
@@ -72,6 +75,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="617" y="349" key="FileDocumentManager.FileCacheConflict" timestamp="1607397273237">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="617" y="349" key="FileDocumentManager.FileCacheConflict/0.0.1792.1120@0.0.1792.1120" timestamp="1607397273237" />
     <state x="397" y="199" key="SettingsEditor" timestamp="1604373198696">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

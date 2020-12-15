@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form onsubmit="getPeople(event)">
+    <input name="people" type="number">
+    <input type="submit">
+</form>
+<div></div>
+<script>
+
+    function getPeople(event) {
+        event.preventDefault();
+        const host = 'https://www.swapi.tech/api/people/'
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', host + document.forms[0].people.value);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onload = function () {
+            console.log(xhr.responseText);
+
+            document.querySelector('div').innerHTML = xhr.responseText
+        }
+        xhr.send();
+    }
+
+
+
+</script>
+
+</body>
+</html>

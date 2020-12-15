@@ -14,14 +14,14 @@ function onSubmit(event) {
 
     console.log('this is on submit', event.target.isActive.checked);
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://dog.ceo/api/breeds/image/random')
+    xhr.open('GET', 'http://587afcf367d9.ngrok.io/users')
     xhr.onreadystatechange = function (data) {
         console.log(data);
     }
     xhr.onload = function (data) {
         const obj = JSON.parse(xhr.responseText);
         console.log(obj);
-        document.querySelector('img').src = obj.message;
+        // document.querySelector('img').src = obj.message;
     }
     xhr.send();
 }
